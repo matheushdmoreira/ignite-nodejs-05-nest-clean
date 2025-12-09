@@ -17,9 +17,9 @@ export class PrismaService
 {
   constructor(
     @Inject(ConfigService)
-    private readonly configService: ConfigService<Env, true>,
+    config: ConfigService<Env, true>,
   ) {
-    const databaseUrl = configService.get('DATABASE_URL', { infer: true })
+    const databaseUrl = config.get('DATABASE_URL', { infer: true })
     const adapter = new PrismaPg({ connectionString: databaseUrl })
 
     super({
