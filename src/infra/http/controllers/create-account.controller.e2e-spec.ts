@@ -1,7 +1,7 @@
 import { INestApplication } from '@nestjs/common'
 import request from 'supertest'
 
-import type { PrismaService } from '@/prisma/prisma.service.js'
+import type { PrismaService } from '@/infra/prisma/prisma.service.js'
 
 describe('Create Account (E2E)', () => {
   let app: INestApplication
@@ -9,8 +9,8 @@ describe('Create Account (E2E)', () => {
 
   beforeAll(async () => {
     const { Test } = await import('@nestjs/testing')
-    const { AppModule } = await import('../app.module.js') // ou '../app.module.js' se necessário
-    const { PrismaService } = await import('../prisma/prisma.service.js')
+    const { AppModule } = await import('../../app.module.js') // ou '../app.module.js' se necessário
+    const { PrismaService } = await import('../../prisma/prisma.service.js')
 
     const moduleRef = await Test.createTestingModule({
       imports: [AppModule],
