@@ -20,7 +20,12 @@ export class PrismaService
     config: ConfigService<Env, true>,
   ) {
     const databaseUrl = config.get('DATABASE_URL', { infer: true })
-    const adapter = new PrismaPg({ connectionString: databaseUrl })
+    const databaseSchema = config.get('DATABASE_SCHEMA', { infer: true })
+
+    const adapter = new PrismaPg(
+      { connectionString: databaseUrl },
+      { schema: databaseSchema },
+    )
 
     super({
       adapter,
