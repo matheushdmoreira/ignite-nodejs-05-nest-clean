@@ -24,6 +24,7 @@ export default defineConfig([
       'simple-import-sort/imports': 'error',
       '@typescript-eslint/no-unsafe-declaration-merging': 'off',
       'no-useless-constructor': 'off',
+      'no-new': 'off',
     },
   },
   globalIgnores(['node_modules/', 'dist/']),
