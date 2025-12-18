@@ -5,7 +5,7 @@ import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-e
 
 import type { Question } from '../../enterprise/entities/question'
 import type { AnswersRepository } from '../repositories/answers-repository'
-import type { QuestionsRepository } from '../repositories/question-repository'
+import type { QuestionsRepository } from '../repositories/questions-repository'
 
 interface ChooseQuestionBestAnswerUseCaseRequest {
   answerId: string

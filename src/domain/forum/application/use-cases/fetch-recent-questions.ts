@@ -1,7 +1,7 @@
 import { type Either, right } from '@/core/either'
 
 import { Question } from '../../enterprise/entities/question'
-import type { QuestionsRepository } from '../repositories/question-repository'
+import type { QuestionsRepository } from '../repositories/questions-repository'
 
 interface FetchRecentQuestionsUseCaseRequest {
   page: number
