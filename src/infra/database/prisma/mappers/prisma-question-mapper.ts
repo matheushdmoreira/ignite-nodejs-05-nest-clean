@@ -1,3 +1,4 @@
+import type { Prisma } from 'generated/prisma/client'
 import type { QuestionModel as PrismaQuestion } from 'generated/prisma/models'
 
 import { UniqueEntityId } from '@/core/entities/unique-entity-id'
@@ -20,5 +21,18 @@ export class PrismaQuestionMapper {
       },
       new UniqueEntityId(raw.id),
     )
+  }
+
+  static toPrisma(question: Question): Prisma.QuestionUncheckedCreateInput {
+    return {
+      id: question.id.toString(),
+      authorId: question.authorId.toString(),
+      bestAnswerId: question.bestAnswerId?.toString(),
+      title: question.title,
+      content: question.content,
+      slug: question.slug.value,
+      createdAt: question.createdAt,
+      updatedAt: question.updatedAt,
+    }
   }
 }
