@@ -8,7 +8,7 @@ import { ConfigService } from '@nestjs/config'
 import { PrismaPg } from '@prisma/adapter-pg'
 import { PrismaClient } from 'generated/prisma/client'
 
-import type { Env } from '@/infra/env'
+import { EnvService } from '@/infra/env/env.service'
 
 @Injectable()
 export class PrismaService
@@ -17,10 +17,10 @@ export class PrismaService
 {
   constructor(
     @Inject(ConfigService)
-    config: ConfigService<Env, true>,
+    config: EnvService,
   ) {
-    const databaseUrl = config.get('DATABASE_URL', { infer: true })
-    const databaseSchema = config.get('DATABASE_SCHEMA', { infer: true })
+    const databaseUrl = config.get('DATABASE_URL')
+    const databaseSchema = config.get('DATABASE_SCHEMA')
 
     const adapter = new PrismaPg(
       { connectionString: databaseUrl },
