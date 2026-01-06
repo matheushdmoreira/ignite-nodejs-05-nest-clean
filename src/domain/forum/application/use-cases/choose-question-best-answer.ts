@@ -1,11 +1,13 @@
+import { Injectable } from '@nestjs/common'
+
 import { type Either, left, right } from '@/core/either'
 import { UniqueEntityId } from '@/core/entities/unique-entity-id'
 import { NotAllowedError } from '@/core/errors/errors/not-allowed-error'
 import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-error'
 
 import type { Question } from '../../enterprise/entities/question'
-import type { AnswersRepository } from '../repositories/answers-repository'
-import type { QuestionsRepository } from '../repositories/questions-repository'
+import { AnswersRepository } from '../repositories/answers-repository'
+import { QuestionsRepository } from '../repositories/questions-repository'
 
 interface ChooseQuestionBestAnswerUseCaseRequest {
   answerId: string
@@ -19,6 +21,7 @@ type ChooseQuestionBestAnswerUseCaseResponse = Either<
   }
 >
 
+@Injectable()
 export class ChooseQuestionBestAnswerUseCase {
   constructor(
     private questionsRepository: QuestionsRepository,
