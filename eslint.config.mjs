@@ -25,6 +25,7 @@ export default defineConfig([
       '@typescript-eslint/no-unsafe-declaration-merging': 'off',
       'no-useless-constructor': 'off',
       'no-new': 'off',
+      'import/no-duplicates': 'off',
     },
   },
   globalIgnores(['node_modules/', 'dist/']),
