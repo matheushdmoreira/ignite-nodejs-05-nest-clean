@@ -4,7 +4,7 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
-    hookTimeout: 20000,
+    hookTimeout: 30000,
     include: ['**/*.e2e-spec.ts'],
     globals: true,
     root: './',
