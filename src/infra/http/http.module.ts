@@ -85,7 +85,7 @@ import { UploadAndCreateAttachmentUseCase } from '@/domain/forum/application/use
     DeleteAnswerCommentUseCase,
     FetchQuestionCommentsUseCase,
     FetchAnswerCommentsUseCase,
-    UploadAndCreateAttachmentUseCase
+    UploadAndCreateAttachmentUseCase,
   ],
 })
 export class HttpModule {}

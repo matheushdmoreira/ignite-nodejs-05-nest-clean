@@ -8,7 +8,9 @@ import { PrismaAnswerCommentMapper } from '../mappers/prisma-answer-comment-mapp
 import { PrismaService } from '../prisma.service'
 
 @Injectable()
-export class PrismaAnswerCommentsRepository implements AnswerCommentsRepository {
+export class PrismaAnswerCommentsRepository
+  implements AnswerCommentsRepository
+{
   constructor(private prisma: PrismaService) {}
 
   async findById(id: string): Promise<AnswerComment | null> {

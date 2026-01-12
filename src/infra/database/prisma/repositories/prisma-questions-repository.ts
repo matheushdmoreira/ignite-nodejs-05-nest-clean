@@ -12,7 +12,7 @@ import { QuestionAttachmentsRepository } from '@/domain/forum/application/reposi
 export class PrismaQuestionsRepository implements QuestionsRepository {
   constructor(
     private prisma: PrismaService,
-    private questionAttachmentsRepository: QuestionAttachmentsRepository
+    private questionAttachmentsRepository: QuestionAttachmentsRepository,
   ) {}
 
   async findById(id: string): Promise<Question | null> {

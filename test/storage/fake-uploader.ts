@@ -1,8 +1,8 @@
+import { randomUUID } from 'node:crypto'
 import {
-  UploadParams,
   Uploader,
+  UploadParams,
 } from '@/domain/forum/application/storage/uploader'
-import { randomUUID } from 'crypto'
 
 interface Upload {
   fileName: string

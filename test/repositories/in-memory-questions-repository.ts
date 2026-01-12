@@ -51,9 +51,9 @@ export class InMemoryQuestionsRepository implements QuestionsRepository {
     )
 
     await this.questionAttachmentsRepository.deleteMany(
-      question.attachments.getRemovedItems()
+      question.attachments.getRemovedItems(),
     )
-    
+
     DomainEvents.dispatchEventsForAggregate(question.id)
   }
 

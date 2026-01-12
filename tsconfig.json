@@ -23,13 +23,8 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
-    "types": [
-      "vitest/globals",
-      "multer"
-    ]
+    "types": ["vitest/globals", "multer"]
   }
 }

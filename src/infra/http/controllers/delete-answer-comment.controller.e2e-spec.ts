@@ -21,8 +21,9 @@ describe('Delete answer comment (E2E)', () => {
   beforeAll(async () => {
     const { Test } = await import('@nestjs/testing')
     const { AppModule } = await import('../../app.module.js')
-    const { PrismaService } =
-      await import('../../database/prisma/prisma.service.js')
+    const { PrismaService } = await import(
+      '../../database/prisma/prisma.service.js'
+    )
 
     const moduleRef = await Test.createTestingModule({
       imports: [AppModule, DatabaseModule],

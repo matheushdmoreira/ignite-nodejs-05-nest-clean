@@ -2,7 +2,9 @@ import type { PaginationParams } from '@/core/repositories/pagination-params'
 import type { QuestionCommentsRepository } from '@/domain/forum/application/repositories/question-comments-repository'
 import type { QuestionComment } from '@/domain/forum/enterprise/entities/question-comment'
 
-export class InMemoryQuestionCommentsRepository implements QuestionCommentsRepository {
+export class InMemoryQuestionCommentsRepository
+  implements QuestionCommentsRepository
+{
   public items: QuestionComment[] = []
 
   async findById(id: string) {
